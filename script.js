@@ -36,6 +36,14 @@ const displayWords=(words)=>{
 const wordContainer=document.getElementById("word-container")
 wordContainer.innerHTML="";
 
+if(words.length==0){
+    wordContainer.innerHTML=`<div class="text-center col-span-full">
+    <img class="mx-auto" src="alert-error.png">
+    <p class="text-l font-semibold">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+    <h1 class="text-2xl font-bold text-gray-500 mt-3">নেক্সট Lesson এ যান</h1>
+   </div>` 
+}
+
 for(word of words){
 
     const divForWords=document.createElement("div")
@@ -48,6 +56,8 @@ for(word of words){
         </div>`
 
     wordContainer.append(divForWords);
+
+
 }
 }
 
